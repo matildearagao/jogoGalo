@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jogo do Galo</title>
+    <style type="text/css">
+      #board {
+        margin: auto;
+        margin-top: 50px;
+        width: 252px;
+        height: 80px;
+      }
+
+      .space {
+        width: 80px;
+        height: 60px;
+        border: 1px solid #000;
+        float: left;
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      .space img {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 10px;
+        margin-top: -10px;
+      }
+
+      .grid {
+        width: 252px;
+        height: 252px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board">
+      <p style="float: left; margin-right: 10px">Vez do Jogador:</p>
+      <img src="" alt="player" height="50" />
+    </div>
+
+    <div class="grid">
+      <div id="a1" class="space" play=""></div>
+      <div id="a2" class="space" play=""></div>
+      <div id="a3" class="space" play=""></div>
+
+      <div id="b1" class="space" play=""></div>
+      <div id="b2" class="space" play=""></div>
+      <div id="b3" class="space" play=""></div>
+
+      <div id="c1" class="space" play=""></div>
+      <div id="c2" class="space" play=""></div>
+      <div id="c3" class="space" play=""></div>
+    </div>
+
+    <script src="galo.js"></script>
+  </body>
+</html>
