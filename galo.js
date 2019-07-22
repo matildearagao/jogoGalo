@@ -50,11 +50,13 @@ async function checkWinner(){
     var a1 = document.querySelector('#a1').getAttribute("play");    
     var a2 = document.querySelector('#a2').getAttribute("play");
     var a3 = document.querySelector('#a3').getAttribute("play");
+
     var b1 = document.querySelector('#b1').getAttribute("play");
     var b2 = document.querySelector('#b2').getAttribute("play");
     var b3 = document.querySelector('#b3').getAttribute("play");
+
     var c1 = document.querySelector('#c1').getAttribute("play");
-    var c2 = document.querySelector('#a2').getAttribute("play");
+    var c2 = document.querySelector('#c2').getAttribute("play");
     var c3 = document.querySelector('#c3').getAttribute("play");
 
     if((a1 == b1 && a1 == c1 && a1 != "") || (a1 == a2 && a1 == a3 && a1 != "") || (a1 == b2 && a1 == c3 && a1 != "")){
