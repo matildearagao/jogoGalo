@@ -47,18 +47,18 @@ async function checkWinner(){
 
     var winner = "";
 
-    var a1 = document.querySelector('#a1').getAttribute("play");    
-    var a2 = document.querySelector('#a2').getAttribute("play");
-    var a3 = document.querySelector('#a3').getAttribute("play");
+    let spacesObj = {};
+    let spaces = document.querySelectorAll('.space');
 
-    var b1 = document.querySelector('#b1').getAttribute("play");
-    var b2 = document.querySelector('#b2').getAttribute("play");
-    var b3 = document.querySelector('#b3').getAttribute("play");
+    //store each space based on div id and play (x or O)
+    spaces.forEach(element => {
+        spacesObj[element.getAttribute("id")] = element.getAttribute('play')
+    });
 
-    var c1 = document.querySelector('#c1').getAttribute("play");
-    var c2 = document.querySelector('#c2').getAttribute("play");
-    var c3 = document.querySelector('#c3').getAttribute("play");
+    //deconstruct obj to get indivudual spaces
+    let {a1, a2, a3, b1, b2, b3, c1, c2, c3} = spacesObj;
 
+    //compare spaces to see if play match
     if((a1 == b1 && a1 == c1 && a1 != "") || (a1 == a2 && a1 == a3 && a1 != "") || (a1 == b2 && a1 == c3 && a1 != "")){
         winner = a1;
     } else if((b2 == b1 && b2 == b3 && b2 != "") || (b2 == a2 && b2 == c2 && b2 != "") || (b2 == a3 && b2 == c1 && b2 != "")){
@@ -69,16 +69,11 @@ async function checkWinner(){
 
     if(winner != ""){
         gameOver = true;
-
         await sleep(50);
-
-        alert("o vencedor foi o: " + winner)
+        alert("the winner is: " + winner)
     }
-    
-    
 }
 
 function sleep(ms){
     return new Promise(resolve=> setTimeout(resolve, ms));
 }
-
